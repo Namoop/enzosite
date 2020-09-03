@@ -19,3 +19,17 @@ a {
 	color: #307cff;
 }
 
+#content {
+    position: relative;
+}
+
+#content img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+<div id="content">
+    <img src="pix/home.png" class="home"/>
+    <div>home</div>
+</div>
