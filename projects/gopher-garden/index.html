@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+                <title>enzo's projects</title>
+		<link rel='stylesheet' type='text/css' href="style.css"/>
+		<link rel="icon" href="https://enzo.run/favicon.png?"/>
+                <meta charset="utf-8" />
+        </head>
+	<body>
+<h1 id="gopher-garden">Gopher-Garden</h1>
+
+<p>For more information please see <a href="https://github.com/enzo-sa/gopher-garden">the github page</a>.</p>
+<h2 id="overview-">Overview:</h2>
+<p><a href="https://goreportcard.com/report/github.com/enzo-sa/gopher-garden"><img src="https://goreportcard.com/badge/github.com/enzo-sa/gopher-garden" alt="Go Report Card"></a> <a href="https://github.com/enzo-sa/gopher-garden/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-BSD--3--Clause-red" alt="License"></a></p>
+<h3 id="play-as-garry-the-gopher-and-collect-as-many-carrots-as-you-can-whilst-avoiding-the-evil-overlords-of-the-garden-_-the-snakes-_-">Play as Garry the Gopher and collect as many carrots as you can whilst avoiding the evil overlords of the garden: <em><strong>the snakes</strong></em>!</h3>
+<p><img src="gopher-garden.png" width="741" height="420" alt="gopher-garden"></p>
+<ul>
+<li><p>Gopher-Garden is a 2D game in which you control Garry the Gopher who moves around a garden and who&#39;s goal is to eat as many carrots as he can whilst avoiding deadly snakes which are in constant roam around the garden.</p>
+</li>
+<li><p>Gopher-Garden is written entirely in Go 1.14 and uses <a href="https://gioui.org/">Gio</a>, a portable immediate mode GUI implemented in Go and developed by <a href="https://eliasnaur.com/">Elias Naur</a>, for graphics and user-input.</p>
+</li>
+<li><p>Gopher-Garden will save all highscores and the user-names that correspond to them in a local file who&#39;s data can be viewed through the in-game menu. Do not edit the highscores.txt file because it can erroneate the parsing and cause the program to panic.</p>
+</li>
+</ul>
+<h2 id="game-controls-">Game Controls:</h2>
+<h3 id="text-fields-">Text Fields:</h3>
+<ul>
+<li><strong>At the start of every new round, the user will be prompted to enter their name.</strong><ul>
+<li><sub>This name will determine the name assigned to the score they achieve in that game. If their name is not already stored with a highscore in the local file, that name and score pair will be stored in the file and any later scores higher than that score with the same name will update the highscore for that user.</sub><h3 id="key-presses-">Key Presses:</h3>
+<strong>Note:</strong> w-a-s-d or the arrow keys may be used to move Garry.</li>
+</ul>
+</li>
+<li><em><strong>&#39;↑&#39;</strong></em> <sub>or</sub> <em><strong>&#39;w&#39;</strong></em>   -&gt; Move Garry up.</li>
+<li><em><strong>&#39;←&#39;</strong></em> <sub>or</sub> <em><strong>&#39;a&#39;</strong></em>  -&gt; Move Garry left.</li>
+<li><em><strong>&#39;↓&#39;</strong></em> <sub>or</sub> <em><strong>&#39;s&#39;</strong></em>  -&gt; Move Garry down.</li>
+<li><em><strong>&#39;→&#39;</strong></em> <sub>or</sub> <em><strong>&#39;d&#39;</strong></em>  -&gt; Move Garry right.</li>
+<li><p><em><strong>&#39;Space&#39;</strong></em> <sub>or</sub> <em><strong>&#39;e&#39;</strong></em> -&gt; Move Garry into a gopher hole.</p>
+<p><sub>When Garry moves into a gopher hole he will pop out at a random one of the other gopher holes. Garry can only move into a gopher hole if his last move was not a gopher hole move.</sub></p>
+<h3 id="buttons-">Buttons:</h3>
+</li>
+<li><p><em><strong>&#39;Menu&#39;</strong></em>  -&gt; On click this button will take you from your current game round into the menu and pause your current game round. <sub> <strong>Note</strong>: If you access the menu in the middle of your game round and you do not resume to that game, your score for that game will NOT be recorded. The menu button can be accessed at all times. When you die however, the continue button acts as an alternative to the menu button which saves your game data.</sub></p>
+<p><sub>(The following buttons can only be accessed while in the menu.)</sub></p>
+<ul>
+<li><em><strong>&#39;New Game&#39;</strong></em>   -&gt; On click this button will start a new round of the game. </li>
+<li><em><strong>&#39;Back&#39;</strong></em>   -&gt; On click this button will take you back into the game round from the menu. </li>
+<li><em><strong>&#39;Highscores&#39;</strong></em> -&gt; On click this button will show the top 5 locally saved highscores and the players who achieved them.<ul>
+<li><sub>The highscores view screen can be exited back into the menu by clicking the <em><strong>Back</strong></em> button in the top right of the highscores tab. Note that this back button is different from the menu back button.</sub></li>
+</ul>
+</li>
+<li><em><strong>&#39;Exit&#39;</strong></em>  -&gt; On click this button will terminate the current game session. </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><em><strong>&#39;Continue&#39;</strong></em> -&gt; On click this button will take you to the menu and save your score of the game with the name you entered at the beginning of the round. This button is only accessible once you die as an alternative to menu, however pressing menu and not pressing continue will not save your data to the local highscores file.</li>
+</ul>
+<h3 id="installation-">Installation:</h3>
+<p>For a complete installation of Gopher-Garden, please perform the following steps.</p>
+<ul>
+<li><p>If the latest version of Go is not already installed on your machine, please follow the system-specific instructions to do so <a href="https://golang.org/doc/install">here</a>.</p>
+</li>
+<li><p>Once the latest version of Go is installed, please install the system-specific dependencies to run <a href="https://gioui.org/">Gio</a> applications <a href="https://gioui.org/#installation">here</a>.</p>
+</li>
+<li><p>Once these preliminary steps are complete, Gopher-Garden can be installed. It would be simpler to use modules and have go run the main package remotely hosted, however because highscores are saved in a local file, this is not an option. To install Gopher-Garden it is necessary  to install the repository on your local machine and this can be done via cloning the repository or downloading the code.</p>
+</li>
+<li>Once you have a local copy of the repository, move into the &#39;gopher-garden/main&#39; directory, and run the following command.
+<pre><code>go run main.go</pre></code>
+Following these steps should allow you to run the game, however if you come across any issues, feel free to notify me through github.</li>
+</ul>
+<h2 id="credits-">CREDITS:</h2>
+<p>This game is based off of the <a href="https://blog.golang.org/gopher#:~:text=The%20Go%20gopher%20is%20an,radio%20station%20in%20New%20Jersey.">Go gopher</a> which was designed by <a href="http://reneefrench.blogspot.com/">Renée French</a> and is licensed under <a href="https://creativecommons.org/licenses/by/3.0/legalcode">Creative Commons Attribution 3.0</a>.</p>
+<p>A detailed list of image credits can be found in <a href="https://github.com/enzo-sa/gopher-garden/blob/master/ui/resources/CREDITS.md">CREDITS</a>.</p>
+<h2 id="license-">LICENSE:</h2>
+<p>Gopher-Garden is licensed under <strong><strong>BSD-3-Clause License</strong></strong>. For more information see <a href="https://github.com/enzo-sa/gopher-garden/blob/master/LICENSE">LICENSE</a>.</p>
+
+	</body>
+</html> 
