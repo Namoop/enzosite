@@ -19,17 +19,11 @@ a {
 	color: #307cff;
 }
 
-#content {
-    position: relative;
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
 }
 
-#content img {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-
-<div id="content">
-    <img src="/pix/home.png" class="home"/>
-    <div>home</div>
-</div>
+<img src="pix/home.png" alt="home">
