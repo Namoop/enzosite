@@ -18,15 +18,3 @@ body {
 a {
 	color: #307cff;
 }
-
-.home {
-   position: relative;
-   top: 0px;
-   right: 0px;
-}
-
-<div id="content">
-	<a href="https://enzo.run">
-		<img src="/pix/home.png" class="home" alt="home icon" width="35" height="35" style="float:right">
-	</a>
-</div>
