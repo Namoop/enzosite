@@ -7,8 +7,12 @@ body {
 	background: #b2b2a2;
 }
 
-ul {
-    list-style-position: inside;
+.parent {
+  text-align: center;
+}
+
+.parent > ul {
+  display: inline-block;
 }
 
 a {
