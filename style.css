@@ -19,17 +19,13 @@ a {
 	color: #307cff;
 }
 
-#homeicon {
-  position:relative;
-}
-
 .home {
-  position:absolute;
-  top:0;
-  right:0;
+   position: relative;
+   top: 0px;
+   right: 0px;
 }
 
-<div id="homeicon">
+<div id="content">
 	<a href="https://enzo.run">
 		<img src="/pix/home.png" class="home" alt="home icon" width="35" height="35" style="float:right">
 	</a>
