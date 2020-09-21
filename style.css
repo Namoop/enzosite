@@ -1,0 +1,83 @@
+html {
+	background-color: rgb(80, 80, 80);
+	color: rgb(108, 223, 73);
+	font-family: 'Exo 2', sans-serif;
+	overflow: scroll;
+}
+
+body {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+a:link {
+	color: rgb(79, 133, 63);
+	text-decoration: none;
+}
+
+a:visited {
+	color: rgb(79, 133, 63);
+	text-decoration: none;
+}
+
+a:hover {
+	color: rgb(77, 153, 58);
+	text-decoration: underline;
+}
+
+nav {
+	text-align: center;
+}
+
+
+input[type=checkbox] {
+	display: none;
+}
+
+label {
+	position: relative;
+	display: block;
+}
+
+.tab-title:after {
+	content: "➕";
+	position: absolute;
+	right: 1em;
+}
+
+input:checked + .tab-title:after {
+	content: "⮟";
+}
+
+.tab-title {
+	border: solid 3px rgb(0, 0, 0);
+	background: rgb(15, 25, 68);
+	margin-top: 7px;
+	padding-left: 10px;
+	margin-bottom: 3px;
+	border-radius: 0px;
+	transition: border-radius 1s;
+}
+
+.tab-content {
+	border: solid 3px rgb(0, 0, 0);
+	border-radius: 0px 0px 15px 15px;
+	background: rgb(27, 32, 54);
+	display: none;
+	padding: 0px 50px 0px;
+	margin-bottom: 20px;
+	transition: transform 1s;
+}
+
+input:checked ~ .tab-content {
+	display: block;
+}
+
+input:checked ~ .tab-title {
+	border-radius: 15px 15px 0px 0px;
+	transition: border-radius 1s;
+}
+
+b. {
+	color: rgb(32, 71, 20)
+}
